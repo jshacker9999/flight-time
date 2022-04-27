@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Flight Time Demo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      #back-link {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #0d130e;
+        padding: 0.5em;
+        font-size: 26px;
+        z-index: 10000;
+        border-right: 1px RGBA(255, 255, 255, 0.5) solid;
+        border-bottom: 1px RGBA(255, 255, 255, 0.5) solid;
+      }
+      #back-link img {
+        display: block;
+        width: 4em;
+        height: auto;
+      }
+
+      @media (max-width: 1199px) {
+        #back-link {
+          font-size: 20px;
+        }
+      }
+      @media (max-width: 511px) {
+        #back-link {
+          font-size: 16px;
+        }
+      }
+
+      #legal-footer-wrap {
+        position: relative;
+        height: 0;
+        z-index: 10002;
+        font-family: Arial, sans-serif;
+      }
+
+      #legal-footer {
+        position: absolute;
+        bottom: 0.5em;
+        right: 0.5em;
+      }
+
+      #legal-footer a {
+        text-decoration: none;
+        color: inherit;
+        padding: 0 0.5em;
+        font-size: 10px;
+      }
+    </style>
+  </head>
+
+  <body class="sidebar-open">
+    <div id="wrapper">
+      <div id="main-col">
+        <div id="myearth" class="little-earth">
+          <div id="tip-layer">
+            <div>
+              <div id="tip-big"></div>
+              <div id="tip-small"></div>
+            </div>
+          </div>
+
+          <div id="button-reset" onclick="reset();"></div>
+        </div>
+      </div>
+     
+
+      <div id="side-col">
+        <div>
+          <h1>
+            Flight Time<br />
+            <span style="font-size: 0.8em">Calculator</span>
+          </h1>
+
+          <h2>From</h2>
+          <select
+            id="from"
+            onchange="if ( ! this.getAttribute('disabled') ) selectFrom();"
+          >
+            <option></option>
+          </select>
+
+          <h2>To</h2>
+          <select
+            id="to"
+            onchange="if ( ! this.getAttribute('disabled') ) selectTo();"
+            disabled
+          >
+            <option></option>
+          </select>
+        </div>
+      </div>
+     
+
+      <div id="button-col">
+        <div id="button-toggle-sidebar" onclick="toggleSidebar();"></div>
+      </div>
+     
+    </div>
+    <script src="js/airports-and-plane-mesh.js"></script>
+    <script src="js/miniature.earth.js"></script>
+    <script src="js/demo.js"></script>
+  </body>
+</html>
